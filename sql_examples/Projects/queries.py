@@ -1,31 +1,31 @@
 '''Write SQL queries'''
 
 
-total_characters = '''
+TOTAL_CHARACTERS = '''
     SELECT COUNT(name)
     FROM charactercreator_character;
 '''
 
 
-total_subclass = '''
+TOTAL_SUBCLASS = '''
     SELCET COUNT(*)
     FROM charactercreator_necromancer;
 '''
 
 
-total_items = '''
+TOTAL_ITEMS = '''
     SELECT COUNT(DISTINCT(name))
     FROM armory_item;
 '''
 
 
-weapons = '''
+WEAPONS = '''
     SELCT COUNT(*)
     FROM armory_weapon;
 '''
 
 
-non_weapons = '''
+NON_WEAPONS = '''
     SELECT COUNT(*)
     FROM armory_item
     LEFT JOIN armory_weapon
@@ -34,20 +34,22 @@ non_weapons = '''
 '''
 
 
-character_items = '''
+CHARACTER_ITEMS = '''
     SELECT COUNT(item_id), character_id
     FROM charactercreator_character_inventory
-    GROUP BY character_id;
+    GROUP BY character_id
+    LIMIT 20;
 '''
 
 
-character_weapons = '''
+CHARACTER_WEAPONS = '''
     SELECT COUNT(item_id), character_id
     FROM armory_weapon
     LEFT JOIN charactercreator_character_inventory
     ON armory_weapon.item_ptr_id =
     charactercreator_character_inventory.item_id
-    GROUP BY character_id;
+    GROUP BY character_id
+    LIMIT 20;
 '''
 
 
