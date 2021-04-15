@@ -8,6 +8,7 @@ pandas = "*"
 pep8 = "*"
 pylint = "*"
 psycopg2-binary = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
