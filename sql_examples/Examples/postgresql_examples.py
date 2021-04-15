@@ -3,15 +3,15 @@ from os import getenv
 import psycopg2
 import create_queries as create
 
-dbname = getenv('PG_DBNAME')
-user = getenv('PG_USER')
-password = getenv('PG_PASSWORD')
-host = getenv('PG_HOST')
+PG_DBNAME = '?'
+PG_USER = '?'
+PG_PASSWORD = '?'
+PG_HOST = '?'
 
 
 # STEP1 - connect to DB
-pg_conn = psycopg2.connect(dbname=dbname, user=user,
-                           password=password, host=host)
+pg_conn = psycopg2.connect(dbname=PG_DBNAME, user=PG_USER,
+                           password=PG_PASSWORD, host=PG_HOST)
 
 
 # STEP2  - make a cursor to traverse DB

@@ -1,6 +1,6 @@
 '''Write SQL queries'''
 
-
+# For rpg_db
 TOTAL_CHARACTERS = '''
     SELECT COUNT(name)
     FROM charactercreator_character;
@@ -60,4 +60,10 @@ avg_character_items = '''
 
 avg_character_weapons = '''
 
+'''
+
+# For buddymove_holiday db
+TOTAL_ROWS = '''
+    SELECT COUNT(*)
+    FROM buddymove_holidayiq
 '''
